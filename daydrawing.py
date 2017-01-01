@@ -2,7 +2,6 @@
 from dateutil.parser import parse
 import requests
 
-
 def sun_on_date(location, date):
     """Returns sunrise and sunset times based on location and date"""
 
@@ -12,13 +11,13 @@ def sun_on_date(location, date):
     sun_api_url_response = requests.get(sun_api_url)
     sun_data = sun_api_url_response.json()
     try:
-        print sun_data["message"]
-        print "bad stuff happened"
-        return "Something went wrong"
-    except:
         sunrise = sun_data["dates"][0]["sunrise"][11:16]
         sunset = sun_data["dates"][0]["sunset"][11:16]
         return sunrise, sunset
+    except:
+        print sun_data["status"]["message"]
+        print "Change usarname to my name to make it work"
+        return exit()
 
 
 def make_day(sunrise, sunset, drawing_precision=4):
@@ -91,4 +90,4 @@ def play_here():
     day_drawing = draw_day(day)
     return day_drawing
 
-#print play_here()
+print play_here()

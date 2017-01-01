@@ -1,6 +1,6 @@
 import daydrawing
 
-
+print 1
 class DayImageOnDate(object):
     """DayImageOnDate has a location and a date, and can create an image of the day based on them"""
 
@@ -49,4 +49,4 @@ def compare_dates(location, dates, drawing_precision=4):
 locations = ["piran", "warwick", "quito"]
 # print compare_locations(locations, "2016-04-22")
 dates = ["2015-12-20", "2015-06-21"]
-print compare_dates("quito", dates, 6)
+#print compare_dates("quito", dates, 6)
